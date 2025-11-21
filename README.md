@@ -2,25 +2,26 @@
 
 A simple Java based Client-Server Chat Messenger that allows real-time communication between the client and server devices.
 
-## Features
-
-1. Real-time chat between Server and Client
-2. 4. Platform-independent  
-3. Easy to run from terminal or any IDE
-4. Logging of all messages, connections and disconnections. 
-5. Supports multiple clients (if implemented)   
-
 ## Project Structure
 
 1. **Server.java** → Handles incoming client connections and chat messaging  
 2. **Client.java** → Connects to the server, sends and receives messages  
 3. **README.md** → Project description , steps to run and Documentation  
 
+## Features
+
+1. Real-time chat between Server and Client
+2. Platform-independent  
+3. Easy to run from terminal or any IDE
+4. Logging of all messages, connections and disconnections. 
+5. Supports multiple clients (if implemented)   
+
 ## Getting Started
 
 ### Prerequisites
 1. Java JDK 8 or later installed  
-2. Terminal or preferred IDE (IntelliJ, VS Code, etc.)
+2. Terminal or preferred IDE (IntelliJ, VS Code, etc.) / Notepad / Editor
+   (Editing the host if connection to be done between two different devices {optional step})
 
 ### Connection
 
