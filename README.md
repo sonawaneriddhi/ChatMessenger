@@ -25,10 +25,10 @@ A simple Java based Client-Server Chat Messenger that allows real-time communica
 
 ### Connection
 
--For using the same deivce as Server and Client as well.
+#### For using the same deivce as Server and Client as well.
 
-1.First run **Server.java**
-2.Then run **Client.java**
+   1. First run **Server.java**
+   2. Then run **Client.java** on another terminal
 
 -For using two different devices (using the actual concept of networking between two devices)
 
