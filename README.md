@@ -1,12 +1,13 @@
 # Chat Messenger with Log Facility
 
-A simple Java based Client-Server Chat Messenger that allows real-time communication between the client and server devices.
+A simple Java based Client-Server Chat Messenger that allows real-time communication between the client and server devices and saves the log of the chat to Harddisk.
 
 ## Project Structure
 
 1. **Server.java** → Handles incoming client connections and chat messaging  
-2. **Client.java** → Connects to the server, sends and receives messages  
-3. **README.md** → Project description , steps to run and Documentation  
+2. **Client.java** → Connects to the server, sends and receives messages
+3. **Log.txt** → Saved file of the chat between the Server and the Client
+4. **README.md** → Project description , steps to run and Documentation  
 
 ## Features
 
