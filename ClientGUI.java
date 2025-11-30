@@ -70,7 +70,7 @@ class Client implements ActionListener
         
             file = new File("Log.txt");
             
-            Writer = new FileWriter("Log.txt", false);
+            Writer = new FileWriter("Log.txt", true);
             Writer.write(empty);
         
         }
@@ -197,3 +197,4 @@ class ClientGUI
         {}
     }
 }
+
