@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////
 //
-//      File Name   : Client.java
+//      File Name   : ClientGUI.java 
 //
 //      Description : Connects to the server via socket to send and 
 //                    receive messages in the chat application.
@@ -21,6 +21,8 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.net.*;
 import java.io.*;
+import java.time.LocalDateTime;               
+import java.time.format.DateTimeFormatter;    
 
 ///////////////////////////////////////////////////////////////////////
 //
@@ -41,6 +43,15 @@ class Client implements ActionListener
     String str1,str2;
     static int no;
 
+    File file;
+    FileWriter Writer;      
+    DateTimeFormatter f1;
+    DateTimeFormatter f2;
+
+    String ts1;
+    String ts2;
+    String empty;
+
     static
     {
         no = 200;
@@ -50,13 +61,27 @@ class Client implements ActionListener
     {
         this.sobj = sobj;
 
+        empty = "";
+
         try
         {
             pobj = new PrintStream(sobj.getOutputStream());
             bobj = new BufferedReader(new InputStreamReader(sobj.getInputStream()));
+        
+            file = new File("Log.txt");
+            
+            Writer = new FileWriter("Log.txt", false);
+            Writer.write(empty);
+        
         }
         catch(Exception eobj)
         {}
+
+        f1 = DateTimeFormatter.ofPattern("dd-MM-YYYY");  
+        f2 = DateTimeFormatter.ofPattern("hh:mm a");  
+
+        ts1 = LocalDateTime.now().format(f1);                        
+        ts2 = LocalDateTime.now().format(f2);                        
 
         str1 = null;
         str2 = null;
@@ -82,6 +107,7 @@ class Client implements ActionListener
 
         fobj.setVisible(true);
         fobj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 
     public void actionPerformed(ActionEvent aobj)
@@ -102,6 +128,16 @@ class Client implements ActionListener
         ResultLabel.setText("Myself : " + str2);
 
         no = no + 20;
+
+        try 
+        {
+            Writer.write("["+ts1+"]"+"["+ts2+"] ");
+            Writer.write("Client: " + str2+"\n");       
+            Writer.flush();
+        } 
+        catch (IOException eobj) 
+        {}                      
+
     }
 
     public void display() throws IOException
@@ -122,6 +158,11 @@ class Client implements ActionListener
             ResultLabel.setText("Server : " + str1);
 
             no = no + 20;
+
+            Writer.write("["+ts1+"]"+"["+ts2+"] ");
+            Writer.write("Server : " + str1+"\n");             
+            Writer.flush();                              
+
         }
     }
 }
@@ -132,7 +173,7 @@ class Client implements ActionListener
 //
 ///////////////////////////////////////////////////////////////////////
 
-class ChatClientGUI
+class ClientGUI             
 {   
     public static void main(String A[])
     {
