@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////
 //
-//      File Name   : Server.java
+//      File Name   : ServerGUI.java
 //
 //      Description : Listens for incoming client connections and 
 //                    handles message communication over a socket.
@@ -134,7 +134,7 @@ class Server implements ActionListener
 //
 ///////////////////////////////////////////////////////////////////////
 
-class ChatServerGUI
+class ServerGUI
 {   
     public static void main(String A[])
     {
